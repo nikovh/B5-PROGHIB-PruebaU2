@@ -1,0 +1,14 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Configuracion</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+    <ion-item>
+      <ion-toggle [checked]="citaInicial" (ionChange)="togle()">Permitir ocultar cita aleatoria en el inicio</ion-toggle>
+    </ion-item>
+  </ion-content>

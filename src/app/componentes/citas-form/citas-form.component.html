@@ -1,0 +1,42 @@
+<ion-list lines="none">
+  <ion-item>
+    <ion-input 
+      [(ngModel)]="citaStr" 
+      required="required" 
+      minlength="5" 
+      #citaStrInput="ngModel" 
+      label="Cita:"
+      labelPlacement="stacked" 
+      [clearInput]="true" 
+      placeholder="Escribe tu cita aqui">
+    </ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input 
+      [(ngModel)]="autorStr" 
+      required="required" 
+      minlength="2" 
+      #autorStrInput="ngModel" 
+      label="Autor:"
+      labelPlacement="stacked" 
+      [clearInput]="true" 
+      placeholder="ingresa el autor de la cita">
+    </ion-input>
+  </ion-item>
+
+  <ion-button [disabled]="!citaStrInput.valid || !autorStrInput.valid"
+    (click)="guardarCita()"
+    >AGREGAR +
+  </ion-button>
+
+  <ion-item>
+    <ion-text [hidden]="citaStrInput.valid || citaStrInput.pristine" color="danger">
+      Escribe una cita de 5 o más letras
+    </ion-text>
+  </ion-item>
+  <ion-item>
+    <ion-text [hidden]="autorStrInput.valid || autorStrInput.pristine" color="danger">
+      Escribe un autor de 2 o más letras</ion-text>
+  </ion-item>
+</ion-list>

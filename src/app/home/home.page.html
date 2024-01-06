@@ -1,0 +1,23 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Citas
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button [routerLink]="['/configuracion']">
+        <ion-icon icon="settings-outline" slot="icon-only" />
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <app-citas [mostrarCita]="inicioTogle" />
+
+  <ion-fab horizontal="center">
+  <ion-fab-button>
+    <ion-icon [routerLink]="['/gestion']" icon="add-outline"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+
+</ion-content>
